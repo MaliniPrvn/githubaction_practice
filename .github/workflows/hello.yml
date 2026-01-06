@@ -16,9 +16,8 @@ jobs:
       env: 
          my_name: malini
     - name: step2
-      run: exit 1 
+      run: echo "this is step 2"
     - name: step3
-      if: failure()
       run: |
        echo "this is multiline command"
        echo "this is the example"
