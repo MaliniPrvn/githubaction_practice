@@ -17,8 +17,8 @@ jobs:
          my_name: malini
     - name: step2
       run: exit 1 
-      continue-on-error: true
     - name: step3
+      if: failure()
       run: |
        echo "this is multiline command"
        echo "this is the example"
