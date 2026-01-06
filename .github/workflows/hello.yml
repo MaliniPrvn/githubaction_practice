@@ -1,9 +1,7 @@
 name: My Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: push
+  
 
 
 jobs:
@@ -11,16 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: step1
-      run: echo "this is $my_name"
-      env: 
-         my_name: malini
-    - name: step2
-      run: echo "this is $pass"
-      env: 
-        pass: ${{ secrets.MY_SECRET }}
-    - name: step3
-      run: |
-       echo "this is multiline command"
-       echo "this is the example"
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: List files
+      run: ls -la
+
     
