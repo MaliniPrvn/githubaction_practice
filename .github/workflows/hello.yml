@@ -16,7 +16,9 @@ jobs:
       env: 
          my_name: malini
     - name: step2
-      run: echo "this is step 2"
+      run: echo "this is $pass"
+      env: 
+        pass: ${{ secrets.MY_SECRET }}
     - name: step3
       run: |
        echo "this is multiline command"
